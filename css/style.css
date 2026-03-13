@@ -326,7 +326,7 @@ h6,
     transition: .5s;
 }
 
-.service-item:hover .service-text {
+.service-item .service-text {
     background: rgba(0, 0, 0, .7);
 }
 
@@ -334,7 +334,7 @@ h6,
     transition: .5;
 }
 
-.service-item:hover * {
+.service-item * {
     color: #FFFFFF;
 }
 
@@ -350,7 +350,7 @@ h6,
     transition: .5s;
 }
 
-.service-item:hover .btn {
+.service-item .btn {
     width: 140px;
 }
 
