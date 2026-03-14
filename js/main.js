@@ -57,15 +57,18 @@
 
 
     // Header carousel
-    $(".header-carousel").owlCarousel({
-        autoplay: true,
-        smartSpeed: 2500,
-        loop: true,
-        nav: false,
-        dots: true,
-        items: 1,
-        dotsData: true,
-    });
+  $(".header-carousel").owlCarousel({
+    autoplay: true,
+    autoplayTimeout: 5000, // How long each slide stays (5 seconds)
+    smartSpeed: 800,       // Transition speed (0.8 seconds)
+    loop: true,
+    nav: false,
+    dots: true,
+    items: 1,
+    dotsData: true,
+    animateOut: 'fadeOut', // Change transformation (requires animate.css)
+    animateIn: 'fadeIn'    // Change transformation
+});
 
 
     // Testimonials carousel
