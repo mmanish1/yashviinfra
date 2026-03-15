@@ -34,7 +34,15 @@
 </head>
 
 <body>
-    <object type="text/html" data="header.html" style="width:100%; height:100px;"></object>
+<div id="header"></div>
+
+<script>
+fetch("header.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+</script>
     <!-- Carousel Start -->
     <div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="owl-carousel header-carousel position-relative">
@@ -52,7 +60,7 @@
                     </div>
                 </div>
             </div>
-            <div class="owl-carousel-item position-relative" data-dot="<img src='img/exterior-louvers-in-ahmedabad.jpg'>"
+            <div class="owl-carousel-item position-relative" data-dot="<img src='img/exterior-louvers-in-ahmedabad.jpg'>">
                 <img class="img-fluid" src="img/exterior-louvers-in-ahmedabad.jpg" alt="Exterior Louvers by Yashvi Infra co in ahmedabad">
                 <div class="owl-carousel-inner">
                     <div class="container">
