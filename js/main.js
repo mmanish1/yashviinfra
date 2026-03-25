@@ -69,7 +69,18 @@
     animateOut: 'fadeOut', // Change transformation (requires animate.css)
     animateIn: 'fadeIn'    // Change transformation
 });
-
+ $(".projects-items").owlCarousel({
+    autoplay: true,
+    autoplayTimeout: 5000, // How long each slide stays (5 seconds)
+    smartSpeed: 800,       // Transition speed (0.8 seconds)
+    loop: true,
+    nav: true,
+    dots: false,
+    items: 4,
+    dotsData: true,
+    animateOut: 'fadeOut', // Change transformation (requires animate.css)
+    animateIn: 'fadeIn'    // Change transformation
+});
 
     // Testimonials carousel
     $('.testimonial-carousel').owlCarousel({
