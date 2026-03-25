@@ -74,7 +74,7 @@
     autoplayTimeout: 5000, // How long each slide stays (5 seconds)
     smartSpeed: 800,       // Transition speed (0.8 seconds)
     loop: true,
-    nav: true,
+    nav: false,
     dots: false,
     items: 4,
     dotsData: true,
