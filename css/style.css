@@ -558,8 +558,8 @@ h6,
 }
 .whatsapp-btn {
     position: fixed;
-    bottom: 80px;
-    right: 20px;
+    bottom: 25px;
+    left: 35px;
     background: #25D366;
     color: #fff;
     font-size: 22px;
