@@ -556,3 +556,24 @@ h6,
 .footer .copyright a:hover {
     color: var(--primary);
 }
+.whatsapp-btn {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: #25D366;
+    color: #fff;
+    font-size: 22px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+/* Hover Effect */
+.whatsapp-btn:hover {
+    background: #1ebe5d;
+}
