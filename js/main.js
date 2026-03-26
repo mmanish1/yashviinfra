@@ -78,6 +78,14 @@
     dots: false,
     items: 4,
     dotsData: true,
+     responsive: {
+            0: {
+                items: 2   // Mobile → 2 images
+            },
+            768: {
+                items: 4   // Desktop → 4 images
+            }
+        },
     animateOut: 'fadeOut', // Change transformation (requires animate.css)
     animateIn: 'fadeIn'    // Change transformation
 });
