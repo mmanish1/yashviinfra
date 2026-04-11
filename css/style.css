@@ -422,7 +422,9 @@ h6,
     color: #FFFFFF;
     background: var(--primary);
 }
-
+.team-items p {
+text-align:left;
+}
 
 /*** Appointment ***/
 .bootstrap-datetimepicker-widget.bottom {
