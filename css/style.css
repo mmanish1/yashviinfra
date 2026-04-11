@@ -239,6 +239,11 @@ h6,
     background-size: cover;
 }
 
+.false-ceiling .page-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, -0.5)), url(../img/false-ceiling-yashvi-infraco.jpg) center center no-repeat;
+    background-size: cover;
+}
+
 .breadcrumb-item+.breadcrumb-item::before {
     color: var(--light);
 }
