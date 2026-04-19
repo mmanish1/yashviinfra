@@ -22,9 +22,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Teko:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css rel="stylesheet">
     <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
@@ -315,7 +316,49 @@ Water-resistant, durable, and perfect for residential and commercial application
  <!-- Project Start -->
     <div class="container-xxl project py-5">
         <div class="container">
-            <img class="img-fluid" src="img/Our-Process-yashviinfra-co.png" alt="Our Process yashvi infra co"/>
+           <section class="process-section">
+  <h2>Our Work Process</h2>
+  <p>How Yashvi Infra Co completes your false ceiling project</p>
+
+  <div class="process-container">
+
+    <div class="step">
+      <div class="icon"><i class="fas fa-user"></i></div>
+      <span class="number">1</span>
+      <h3>LISTEN</h3>
+      <p>Understand client requirements and site conditions.</p>
+    </div>
+
+    <div class="step">
+      <div class="icon"><i class="fas fa-search"></i></div>
+      <span class="number">2</span>
+      <h3>EXPLORE</h3>
+      <p>Suggest suitable ceiling design and materials.</p>
+    </div>
+
+    <div class="step">
+      <div class="icon"><i class="fas fa-filter"></i></div>
+      <span class="number">3</span>
+      <h3>FILTER</h3>
+      <p>Finalize budget, design and technical details.</p>
+    </div>
+
+    <div class="step">
+      <div class="icon"><i class="fas fa-tools"></i></div>
+      <span class="number">4</span>
+      <h3>REALIZE</h3>
+      <p>Execute installation with quality workmanship.</p>
+    </div>
+
+    <div class="step">
+      <div class="icon"><i class="fas fa-check"></i></div>
+      <span class="number">5</span>
+      <h3>FULFILL</h3>
+      <p>Deliver project on time with client satisfaction.</p>
+    </div>
+
+  </div>
+</section>
     
  </div>
          </div>
@@ -546,7 +589,140 @@ fetch("footer.html")
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-     <style>.me-3.logo{height: 110px;}</style>           
+     <style>
+         .me-3.logo{height: 110px;}
+         .process-section {
+  background: #4f7c57;
+  padding: 60px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+/* ===== CONTAINER ===== */
+.process-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Horizontal Line */
+.process-container::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 5%;
+  width: 90%;
+  height: 3px;
+  background: #fff;
+  z-index: 0;
+}
+
+/* ===== STEP ===== */
+.step {
+  position: relative;
+  width: 18%;
+  z-index: 1;
+  text-align: center;
+  transition: all 0.3s ease;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* ICON */
+.icon {
+  font-size: 35px;
+  background: #fff;
+  color: #000;
+  display: inline-block;
+  padding: 15px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+/* NUMBER BADGE */
+.number {
+  position: absolute;
+  top: 0;
+  right: 30%;
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  padding: 5px 8px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+/* TEXT */
+.step h3 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.step p {
+  font-size: 13px;
+  color: #ddd;
+}
+
+/* ===== HOVER EFFECT ===== */
+.step:hover {
+  transform: translateY(-10px);
+  background: rgba(255,255,255,0.1);
+}
+
+.step:hover .icon {
+  background: #000;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.step:hover .number {
+  background: #fff;
+  color: #000;
+  transform: scale(1.2);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+  .process-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .process-container::before {
+    display: none;
+  }
+
+  /* Vertical line */
+  .process-container::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: #fff;
+    transform: translateX(-50%);
+  }
+
+  .step {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 40px;
+  }
+
+  .number {
+    right: auto;
+    left: 60%;
+  }
+}
+
+</style>         
 </body>
 
 
