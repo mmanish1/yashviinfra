@@ -593,8 +593,18 @@ fetch("footer.html")
     <script src="js/main.js"></script>
      <style>
          .me-3.logo{height: 110px;}
-         .process-section {
+.process-section {
+  padding: 60px 20px;
   text-align: center;
+}
+
+.process-section h2 {
+  margin-bottom: 10px;
+}
+
+.process-section p {
+  color: #666;
+  margin-bottom: 40px;
 }
 
 /* ===== CONTAINER ===== */
@@ -602,89 +612,92 @@ fetch("footer.html")
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
   max-width: 1200px;
   margin: auto;
-}
-
-/* Horizontal Line */
-.process-container::before {
-  content: '';
-  position: absolute;
-  top: 40px;
-  left: 5%;
-  width: 90%;
-  height: 3px;
-  background: #fff;
-  z-index: 0;
 }
 
 /* ===== STEP ===== */
 .step {
   position: relative;
   width: 18%;
-  z-index: 1;
   text-align: center;
-  transition: all 0.3s ease;
   padding: 20px;
   border-radius: 10px;
+  transition: 0.3s ease;
 }
 
-/* ICON */
+/* ===== LINE BETWEEN STEPS (DESKTOP) ===== */
+.step::after {
+  content: '';
+  position: absolute;
+  top: 45px;
+  right: -50%;
+  width: 100%;
+  height: 2px;
+  background: #ccc;
+  z-index: 0;
+}
+
+.step:last-child::after {
+  display: none;
+}
+
+/* ===== ICON ===== */
 .icon {
-  font-size: 35px;
-  background: #fff;
+  font-size: 30px;
+  background: #f5f5f5;
   color: #000;
-  display: inline-block;
   padding: 15px;
   border-radius: 50%;
-  margin-bottom: 10px;
-  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  border: 2px solid #ddd;
+  transition: 0.3s ease;
 }
 
-/* NUMBER BADGE */
+/* ===== NUMBER ===== */
 .number {
   position: absolute;
-  top: 0;
+  top: 5px;
   right: 30%;
   background: #000;
   color: #fff;
   font-size: 12px;
-  padding: 5px 8px;
+  padding: 4px 7px;
   border-radius: 50%;
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
 }
 
-/* TEXT */
+/* ===== TEXT ===== */
 .step h3 {
-  font-size: 16px;
   margin: 10px 0;
+  font-size: 16px;
 }
 
 .step p {
-  font-size: 15px;
+  font-size: 13px;
+  color: #666;
 }
 
-/* ===== HOVER EFFECT ===== */
+/* ===== HOVER ===== */
 .step:hover {
-  transform: translateY(-10px);
-  background: rgba(255,255,255,0.1);
+  transform: translateY(-8px);
+  background: #f9f9f9;
 }
 
 .step:hover .icon {
   background: #000;
   color: #fff;
   transform: scale(1.1);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
 .step:hover .number {
-  background: #000;
-  color: #fff;
-  transform: scale(1.2);
+  background: #fff;
+  color: #000;
 }
 
-/* ===== MOBILE ===== */
+/* ===== MOBILE FIX ===== */
 @media (max-width: 768px) {
 
   .process-container {
@@ -692,28 +705,41 @@ fetch("footer.html")
     align-items: center;
   }
 
-  .process-container::before {
-    display: none;
-  }
-
-  /* Vertical line */
-  .process-container::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    width: 3px;
-    height: 100%;
-    background: #fff;
-    transform: translateX(-50%);
-  }
-
   .step {
     width: 100%;
     max-width: 300px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    position: relative;
   }
 
+  /* REMOVE desktop line */
+  .step::after {
+    display: none;
+  }
+
+  /* ADD clean vertical connecting lines BETWEEN steps */
+  .step::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    width: 2px;
+    height: 40px;
+    background: #ccc;
+    transform: translateX(-50%);
+  }
+
+  /* Remove line before first */
+  .step:first-child::before {
+    display: none;
+  }
+
+  /* Ensure icon stays above line */
+  .icon {
+    z-index: 2;
+  }
+
+  /* Adjust number */
   .number {
     right: auto;
     left: 60%;
