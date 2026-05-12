@@ -246,6 +246,10 @@ h6,
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, -0.5)), url(../img/acp-clading-by-yashvi-infra-ahmedabad-gujarat.jpg) center center no-repeat;
     background-size: cover;
 }
+.page-header.hpl {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, -0.5)), url(../img/hpl-wall-cladding-gujarat.jpg) center center no-repeat;
+    background-size: cover;
+}
 
 
 .page-header.toilet {
