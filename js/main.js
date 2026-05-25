@@ -80,7 +80,7 @@
     dotsData: true,
      responsive: {
             0: {
-                items: 2   // Mobile → 2 images
+                items: 1   // Mobile → 2 images
             },
             768: {
                 items: 4   // Desktop → 4 images
