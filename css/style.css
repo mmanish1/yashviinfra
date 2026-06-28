@@ -277,6 +277,12 @@ h6,
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, -0.5)), url(../img/wooden-ceilings.jpg) center center no-repeat;
     background-size: cover;
 }
+
+.lay-in-tile.page-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, -0.5)), url(../img/lay-in-ceiling-tiles-banner.jpg) center center no-repeat;
+    background-size: cover;
+}
+
 .page-header.linear {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, -0.5)), url(../img/150f.jpg) center center no-repeat;
     background-size: cover;
