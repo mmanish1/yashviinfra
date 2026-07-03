@@ -581,7 +581,6 @@
             lightbox.addEventListener('click', function (e) {
                 if (e.target === lightbox) closeLightbox();
             });
-
             document.addEventListener('keydown', function (e) {
                 if (!lightbox.classList.contains('active')) return;
                 if (e.key === 'Escape') closeLightbox();
