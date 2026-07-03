@@ -195,6 +195,95 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- Project Image Lightbox Styles -->
+    <style>
+        .team-item img { cursor: pointer; }
+
+        .project-lightbox {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .project-lightbox.active {
+            display: flex;
+        }
+
+        .project-lightbox-content {
+            position: relative;
+            max-width: 900px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .project-lightbox-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 6px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            animation: lightboxZoom 0.25s ease;
+        }
+
+        @keyframes lightboxZoom {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .project-lightbox-caption {
+            color: #fff;
+            margin-top: 15px;
+            font-size: 18px;
+        }
+
+        .project-lightbox-caption span {
+            color: var(--bs-primary, #EFBB20);
+        }
+
+        .project-lightbox-close {
+            position: absolute;
+            top: -45px;
+            right: 0;
+            color: #fff;
+            font-size: 32px;
+            line-height: 1;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .project-lightbox-prev,
+        .project-lightbox-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+            font-size: 28px;
+            background: rgba(0,0,0,0.4);
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .project-lightbox-prev { left: -55px; }
+        .project-lightbox-next { right: -55px; }
+
+        @media (max-width: 767px) {
+            .project-lightbox-prev { left: 5px; }
+            .project-lightbox-next { right: 5px; }
+            .project-lightbox-close { top: 5px; right: 5px; }
+        }
+    </style>
 </head>
 <body class="projects">
 
@@ -263,7 +352,7 @@
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item position-relative">
                         <div class="position-relative">
-                            <img class="img-fluid" loading="lazy" src="img/multi-exterior-louver-by-yashviinfra-dehgam.jpeg" alt="multi exterior louver dehgam">
+                            <img class="img-fluid project-img" loading="lazy" src="img/multi-exterior-louver-by-yashviinfra-dehgam.jpeg" alt="multi exterior louver dehgam" data-title="Multi Exterior Louver" data-location="Dehgam">
                         </div>
                         <div class="bg-light text-center p-4">
                             <h2 class="mt-2">Multi Exterior Louver</h2>
@@ -274,7 +363,7 @@
                  <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item position-relative">
                         <div class="position-relative">
-                            <img class="img-fluid" loading="lazy" src="img/ceiling-by-yashvi-infra-vaisnovdevi-ahmedabad.jpg" alt="84C False ceiling ahmedabad">
+                            <img class="img-fluid project-img" loading="lazy" src="img/ceiling-by-yashvi-infra-vaisnovdevi-ahmedabad.jpg" alt="84C False ceiling ahmedabad" data-title="84C False Ceiling" data-location="Ahmedabad">
                         </div>
                         <div class="bg-light text-center p-4">
                             <h2 class="mt-2">84C False Ceiling</h2>
@@ -285,7 +374,7 @@
                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item position-relative">
                         <div class="position-relative">
-                            <img class="img-fluid" loading="lazy" src="img/open-false-ceiling-ahmedabad.jpeg" alt="open ceiling ahmedabad">
+                            <img class="img-fluid project-img" loading="lazy" src="img/open-false-ceiling-ahmedabad.jpeg" alt="open ceiling ahmedabad" data-title="Open Cell Ceiling" data-location="Ahmedabad">
                         </div>
                         <div class="bg-light text-center p-4">
                             <h2 class="mt-2">Open Cell Ceiling</h2>
@@ -296,7 +385,7 @@
                  <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item position-relative">
                         <div class="position-relative">
-                            <img class="img-fluid" loading="lazy" src="img/false-ceiling-louver-in-valsad.jpeg" alt="false ceiling-louver in valsad">
+                            <img class="img-fluid project-img" loading="lazy" src="img/false-ceiling-louver-in-valsad.jpeg" alt="false ceiling-louver in valsad" data-title="False Ceiling & Louver" data-location="Valsad">
                         </div>
                         <div class="bg-light text-center p-4">
                             <h2 class="mt-2">False Ceiling & Louver</h2>
@@ -307,7 +396,7 @@
                  <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item position-relative">
                         <div class="position-relative">
-                            <img class="img-fluid" loading="lazy" src="img/acp-with-ceiling-ahmedabad.jpg" alt="acp facade ahmedabad">
+                            <img class="img-fluid project-img" loading="lazy" src="img/acp-with-ceiling-ahmedabad.jpg" alt="acp facade ahmedabad" data-title="Acp Facade with Ceiling" data-location="Ahmedabad">
                         </div>
                         <div class="bg-light text-center p-4">
                             <h2 class="mt-2">Acp Facade with Ceiling</h2>
@@ -318,7 +407,7 @@
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item position-relative">
                         <div class="position-relative">
-                            <img class="img-fluid" loading="lazy" src="img/pvc-wooden-ceiling-sciencecity-ahmedabad.jpg" alt="bathroom pvc wooden ceiling sciencecity ahmedabad">
+                            <img class="img-fluid project-img" loading="lazy" src="img/pvc-wooden-ceiling-sciencecity-ahmedabad.jpg" alt="bathroom pvc wooden ceiling sciencecity ahmedabad" data-title="PVC Wooden Ceiling" data-location="Ahmedabad">
                         </div>
                         <div class="bg-light text-center p-4">
                             <h2 class="mt-2">PVC Wooden Ceiling</h2>
@@ -329,7 +418,7 @@
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item position-relative">
                         <div class="position-relative">
-                            <img class="img-fluid" loading="lazy" src="img/false-ceiling-by-yashvi-infra-dahod.jpg" alt="grey false ceiling dahod">
+                            <img class="img-fluid project-img" loading="lazy" src="img/false-ceiling-by-yashvi-infra-dahod.jpg" alt="grey false ceiling dahod" data-title="Grey False Ceiling" data-location="Dahod">
                         </div>
                         <div class="bg-light text-center p-4">
                             <h2 class="mt-2">Grey False Ceiling</h2>
@@ -340,7 +429,7 @@
                  <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item position-relative">
                         <div class="position-relative">
-                            <img class="img-fluid" loading="lazy" src="img/false-ceiling-gandhinagar.jpeg" alt="false ceiling in gandhinagar">
+                            <img class="img-fluid project-img" loading="lazy" src="img/false-ceiling-gandhinagar.jpeg" alt="false ceiling in gandhinagar" data-title="Metal False Ceiling" data-location="Gandhinagar">
                         </div>
                         <div class="bg-light text-center p-4">
                             <h2 class="mt-2">Metal False Ceiling</h2>
@@ -351,7 +440,7 @@
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item position-relative">
                         <div class="position-relative">
-                            <img class="img-fluid" loading="lazy" src="img/hpl-adani-airport.jpg" alt="HPL installtion Adani airport">
+                            <img class="img-fluid project-img" loading="lazy" src="img/hpl-adani-airport.jpg" alt="HPL installtion Adani airport" data-title="HPL" data-location="Adani Airport">
                         </div>
                         <div class="bg-light text-center p-4">
                             <h2 class="mt-2">HPL</h2>
@@ -365,6 +454,18 @@
         </div>
     </div>
     <!-- Project End -->
+
+    <!-- Project Image Lightbox -->
+    <div class="project-lightbox" id="projectLightbox">
+        <div class="project-lightbox-content">
+            <button type="button" class="project-lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+            <button type="button" class="project-lightbox-prev" id="lightboxPrev" aria-label="Previous">&#10094;</button>
+            <img src="" alt="" id="lightboxImg">
+            <button type="button" class="project-lightbox-next" id="lightboxNext" aria-label="Next">&#10095;</button>
+            <p class="project-lightbox-caption" id="lightboxCaption"></p>
+        </div>
+    </div>
+    <!-- Project Image Lightbox End -->
 
 
     <!-- Footer Start -->
@@ -431,6 +532,64 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <!-- Project Image Lightbox Script -->
+    <script>
+        (function () {
+            var images = Array.prototype.slice.call(document.querySelectorAll('.project-img'));
+            var lightbox = document.getElementById('projectLightbox');
+            var lightboxImg = document.getElementById('lightboxImg');
+            var lightboxCaption = document.getElementById('lightboxCaption');
+            var closeBtn = document.getElementById('lightboxClose');
+            var prevBtn = document.getElementById('lightboxPrev');
+            var nextBtn = document.getElementById('lightboxNext');
+            var currentIndex = 0;
+
+            function showImage(index) {
+                if (index < 0) index = images.length - 1;
+                if (index >= images.length) index = 0;
+                currentIndex = index;
+                var img = images[currentIndex];
+                lightboxImg.src = img.getAttribute('src');
+                lightboxImg.alt = img.getAttribute('alt') || '';
+                var title = img.getAttribute('data-title') || '';
+                var location = img.getAttribute('data-location') || '';
+                lightboxCaption.innerHTML = title + (location ? ' &mdash; <span>' + location + '</span>' : '');
+            }
+
+            function openLightbox(index) {
+                showImage(index);
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            images.forEach(function (img, index) {
+                img.addEventListener('click', function () {
+                    openLightbox(index);
+                });
+            });
+
+            closeBtn.addEventListener('click', closeLightbox);
+            prevBtn.addEventListener('click', function () { showImage(currentIndex - 1); });
+            nextBtn.addEventListener('click', function () { showImage(currentIndex + 1); });
+
+            lightbox.addEventListener('click', function (e) {
+                if (e.target === lightbox) closeLightbox();
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (!lightbox.classList.contains('active')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+                if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+            });
+        })();
+    </script>
 </body>
 
 </html>
